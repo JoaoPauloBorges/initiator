@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import postgresOptions from 'apps/database/postgres.config';
 import { CarsModule } from './cars/cars.module';
-import postgresOptions from './database/postgres.config';
 
 @Module({
   imports: [TypeOrmModule.forRoot(postgresOptions), CarsModule],

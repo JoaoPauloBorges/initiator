@@ -1,4 +1,4 @@
-import { Logger } from '@nestjs/common';
+import { InternalServerErrorException, Logger } from '@nestjs/common';
 import * as dotenv from 'dotenv';
 
 export function bootstrapEnvironmentVariables() {
@@ -24,4 +24,10 @@ export function bootstrapEnvironmentVariables() {
   }
 
   for (const key in parsed) process.env[key] = parsed[key];
+
+  if (!process.env.JWT_SECRET) {
+    throw new InternalServerErrorException(
+      'Please define a JWT_SECRET Environment Variable',
+    );
+  }
 }

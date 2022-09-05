@@ -1,5 +1,5 @@
 import { DataSourceOptions } from 'typeorm';
-import { bootstrapEnvironmentVariables } from '../bootstrap';
+import { bootstrapEnvironmentVariables } from '../bootstrap-env-var';
 
 bootstrapEnvironmentVariables();
 
