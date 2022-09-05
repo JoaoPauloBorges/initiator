@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { Logger } from '@nestjs/common';
 import * as dotenv from 'dotenv';
 
@@ -15,6 +14,14 @@ export function bootstrapEnvironmentVariables() {
     path = '.env.test';
   }
 
-  const { parsed } = dotenv.config({ path });
+  const { parsed, error } = dotenv.config({ path });
+
+  if (!!error) {
+    logger.error(
+      'An error occurred while loading Environment Variables',
+      error,
+    );
+  }
+
   for (const key in parsed) process.env[key] = parsed[key];
 }

@@ -2,7 +2,6 @@ import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
-import { bootstrapEnvironmentVariables } from './bootstrap';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -24,5 +23,4 @@ async function bootstrap() {
   logger.log('Swagger Documentation available at /');
   await app.listen(3000);
 }
-bootstrapEnvironmentVariables();
 bootstrap();
