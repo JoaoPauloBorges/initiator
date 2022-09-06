@@ -1,11 +1,9 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import postgresOptions from 'apps/database/postgres.config';
+import { DatabaseModule } from 'libs/database/src';
+import { SharedModule } from 'shrd/shared';
 import { CarsModule } from './cars/cars.module';
-import { JwtStrategy } from './strategies/jwt.strategy';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(postgresOptions), CarsModule],
-  providers: [JwtStrategy],
+  imports: [DatabaseModule, SharedModule, CarsModule],
 })
 export class AppModule {}

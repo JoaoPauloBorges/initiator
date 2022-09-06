@@ -1,7 +1,7 @@
 import { User } from 'apps/auth/src/users/user.entity';
 import { Car } from 'apps/crud/src/cars/car.entity';
 import { DataSourceOptions } from 'typeorm';
-import { bootstrapEnvironmentVariables } from '../bootstrap-env-var';
+import { bootstrapEnvironmentVariables } from './bootstrap-env-var';
 
 bootstrapEnvironmentVariables();
 

@@ -11,7 +11,7 @@ import {
   ClassSerializerInterceptor,
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
-import { JwtAuthGuard } from '../guards/jwt-auth.guard';
+import { JwtAuthGuard } from 'shrd/shared/guards/jwt-auth.guard';
 import { Car } from './car.entity';
 import { CarsService } from './cars.service';
 import { CreateCarDto } from './dto/create-car.dto';

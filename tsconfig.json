@@ -18,6 +18,19 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "allowJs": true,
-    "paths": {}
+    "paths": {
+      "shrd/shared": [
+        "libs/shared/src"
+      ],
+      "shrd/shared/*": [
+        "libs/shared/src/*"
+      ],
+      "db/database": [
+        "libs/database/src"
+      ],
+      "db/database/*": [
+        "libs/database/src/*"
+      ]
+    }
   }
 }
