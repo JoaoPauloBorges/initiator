@@ -1,4 +1,5 @@
 import { User } from 'apps/auth/src/users/user.entity';
+import { Car } from 'apps/crud/src/cars/car.entity';
 import { DataSourceOptions } from 'typeorm';
 import { bootstrapEnvironmentVariables } from '../bootstrap-env-var';
 
@@ -13,6 +14,6 @@ const postgresOptions: DataSourceOptions = {
   database: process.env.POSTGRES_DB,
   synchronize: Boolean(process.env.POSTGRES_SYNC),
   logging: true,
-  entities: [User],
+  entities: [User, Car],
 };
 export default postgresOptions;
