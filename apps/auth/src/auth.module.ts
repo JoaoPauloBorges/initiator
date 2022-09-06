@@ -5,8 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import postgresOptions from 'apps/database/postgres.config';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
-import { jwtConstants } from './constants';
-import { LocalStrategy } from './local.strategy';
+import { LocalStrategy } from './strategies/local.strategy';
 import { UsersModule } from './users/users.module';
 
 @Module({
@@ -15,7 +14,7 @@ import { UsersModule } from './users/users.module';
     PassportModule,
     UsersModule,
     JwtModule.register({
-      secret: jwtConstants.secret,
+      secret: process.env.JWT_SECRET,
       signOptions: { expiresIn: '60s' },
     }),
   ],
