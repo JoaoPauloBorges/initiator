@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  db:
+    image: postgres
+    environment:
+      TZ: 'GMT-3'
+      PGTZ: 'GMT-3'
+      POSTGRES_DB: "iniciador_database"
+      POSTGRES_USER: "iniciador_user"
+      POSTGRES_PASSWORD: "magical_password"
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+networks: 
+  app-network:
+    driver: bridge
