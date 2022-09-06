@@ -11,7 +11,7 @@ const postgresOptions: DataSourceOptions = {
   username: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DB,
-  synchronize: true,
+  synchronize: Boolean(process.env.POSTGRES_SYNC),
   logging: true,
   entities: [User],
 };
